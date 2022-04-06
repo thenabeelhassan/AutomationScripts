@@ -138,19 +138,6 @@ resource "aws_cloudwatch_metric_alarm" "ec2-cpu-HighUtilization" {
   insufficient_data_actions = []
 }
 
-resource "aws_cloudwatch_metric_alarm" "ec2-cpu-HighUtilization" {
-  alarm_name = "${var.ec2-instance} - High CPU Utilization"
-  comparison_operator = "GreaterThanOrEqualToThreshold"
-  evaluation_periods = "2"
-  metric_name = "CPUUtilization"
-  namespace = "AWS/EC2"
-  period = "120"
-  statistic = "Average"
-  threshold = "80"
-  alarm_description = "This alaram trigers at CPU Utlization reaches or exceed 80%"
-  insufficient_data_actions = []
-}
-
 resource "aws_cloudwatch_metric_alarm" "ec2-DiskReads-HighUtilization" {
   alarm_name = "${var.ec2-instance} - High CPU Utilization"
   comparison_operator = "GreaterThanOrEqualToThreshold"
