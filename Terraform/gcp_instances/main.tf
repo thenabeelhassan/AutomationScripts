@@ -39,7 +39,7 @@ resource "google_compute_address" "static" {
 
 
 resource "google_compute_instance" "jenkins" {
-  name         = "jenkinsserver"
+  name         = "jenkins"
   machine_type = "f1-micro"
   zone         = "${var.region}-a"
   tags         = ["externalssh","jenkins"]
