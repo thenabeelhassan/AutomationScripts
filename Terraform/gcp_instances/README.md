@@ -12,7 +12,7 @@
 
 ![terraform apply](https://i.ibb.co/5FRZ1pL/2022-04-30-1-25-31.png)
 `On successfull execution of the above command output will look alike:`
-![terraform apply output](https://lh3.google.com/u/0/d/157LaPlebpIVmNTStbmD1N8-NAFQAM0Pr=w1366-h635-iv1)
+![terraform apply output](https://i.ibb.co/y0rNJXb/2022-04-30-1-59-32.png)
 `Host will return the Public IP of the instace created`
 
 > _Note: SSH Key of the instance created will be added to SSH Keys of the Host/gCloud Shell._
@@ -20,7 +20,7 @@
 - For Ansible configuration the target instance must be added to known host list. For this process ssh to the _target instance_ from the _Host/gCloud Shell_.
 
 `Type "yes" hen asked for continue connecting`
-![SSH to Target Instance](https://lh4.googleusercontent.com/2IgLll7NyUqB2xnZ0Cb4EbWj6a4JOMDzOsNPHdRHYkQaW_9Hkr216Hfvj2fr2JRLHXEtb470Mf8jv5qrKEpj=w1366-h635)
+![SSH to Target Instance](https://i.ibb.co/QCtXf51/2022-04-30-2-12-27.png)
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbMTM3Mjg4MTE3NiwxOTc2Njc5Njk0LDE1Mj
