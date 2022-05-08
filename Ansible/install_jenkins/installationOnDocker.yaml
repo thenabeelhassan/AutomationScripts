@@ -1,0 +1,21 @@
+- hosts: target
+  become: yes
+  remote_user: devops
+  become_user: root
+  tasks:
+    #Install Docker on Redhat
+    - name: Add Docker yum repo
+      become: yes
+      shell: sh -c "sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo"
+
+    - name: Install docker
+      yum:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: latest
+      become: yes
+#Create a Jenkins conatiner on Docker
+
+#docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts

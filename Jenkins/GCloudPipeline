@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                withCredentials([file(credentialsId:'536a61a0-3694-406c-9b35-a35c917b967b', variable: 'gCloudCred')]) {
+                    sh '''
+                        rm -r Context
+                        git clone 'https://Ameen-Alam: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@github.com/Entrolics-LLC/Context.git'
+                        cd Context
+			            cd 'Node & React'
+                        gcloud auth activate-service-account --key-file="$gCloudCred"
+                        gcloud config set project elaborate-howl-285701
+			            gcloud builds submit --tag gcr.io/elaborate-howl-285701/context:nabeelhassan --timeout=9000 --machine-type=n1-highcpu-32
+			            gcloud run deploy context-nabeelhassan --image gcr.io/elaborate-howl-285701/context:nabeelhassan --region=us-central1 --platform managed --allow-unauthenticated
+			            gcloud run services update-traffic context-nabeelhassan --region=us-central1 --to-revisions LATEST=100
+                    '''
+                }
+            }
+        }
+    }
+}

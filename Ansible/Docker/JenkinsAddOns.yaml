@@ -1,0 +1,13 @@
+- name: Run Container on Docker
+  hosts: target
+  user: devops
+  become: true
+  become_method: sudo
+  gather_facts: false
+
+  tasks:
+    - name: Docker Exec
+      shell: sh -c "docker exec -it -u root jenkins /bin/bash"
+
+    - name: Install Google Cloud SDK
+      shell: sh -c "docker exec -it -u root jenkins /bin/bash"

@@ -1,0 +1,10 @@
+- name: Run Container on Docker
+  hosts: target
+  user: devops
+  become: true
+  become_method: sudo
+  gather_facts: false
+
+  tasks:
+    - name: Pull docker image
+      shell: sh -c "docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts"
